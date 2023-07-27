@@ -1,0 +1,599 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+
+    /* Colors */
+    --dark-color: #2a2a2a;
+    --grey-color: #898989;
+    --lightgrey-color: #c2c2c2;
+    --white-color: #ffffff;
+    --dark-blue-color: #365cc7;
+    --gradient: linear-gradient(165deg, rgba(182,0,66,1) 0%, rgba(54,92,199,1) 0%, rgba(39,73,142,1) 100%);
+    --shadow: 0px 0px 27px -19px rgba(0,0,0,0.07);
+    --shadow-2: 0px 0px 19px -2px rgba(0,0,0,0.1);
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+/* Buttons */
+
+.primary-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    background: var(--gradient);
+    cursor: pointer;
+    color: var(--white-color);
+    font-size: 1.25rem;
+    transition: 0.2s linear;
+}
+
+.secondary-btn {
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    background: var(--white-color);
+    cursor: pointer;
+    color: var(--dark-blue-color);
+    font-size: 1.25rem;
+    transition: 0.2s linear;
+    font-weight: 500;
+}
+
+.primary-btn:hover {
+    box-shadow: 0px 0px 19px -2px rgba(101,140,207,1);
+}
+
+.secondary-btn:hover {
+    box-shadow: 0px 0px 19px -2px rgba(101,140,207,1);
+}
+
+/* NavBar */
+
+.main-header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-xl);
+}
+
+.main-header a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header img {
+    height: 45%;
+}
+
+.main-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 0 var(--spacing-xl);
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.main-nav ul li a {
+    color: var(--dark-color);
+    padding: 10px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.main-nav ul li a:hover {
+    color: var(--dark-blue-color);
+}
+
+.main-nav ul:nth-child(even) .primary-btn a {
+    color: white;
+    padding: 0;
+}
+
+.hamburger-btn {
+    width: 40px;
+    height: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.hamburger-btn .bar {
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #121212;
+}
+
+/* Main */
+
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xl);
+    overflow: hidden;
+}
+
+.hero-section {
+    width: 100%;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-one {
+    width: 50%;
+}
+
+.col-one h1 {
+    font-size: 5rem;
+    color: var(--dark-blue-color);
+}
+
+.col-one h2 {
+    font-size: 3rem;
+    padding: var(--spacing-md) 0 0 0;
+    width: 90%;
+}
+
+.col-one p {
+    color: var(--grey-color);
+    padding: var(--spacing-lg) 0;
+    width: 90%;
+    font-size: 1.3rem;
+}
+
+.col-two {
+ width: 50%;
+}
+
+.col-two img {
+    width: 130%;
+}
+
+/* How Resume Builder Works */
+
+.resume-builder {
+    background-color: var(--white-color);
+    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.resume-builder h2 {
+    color: var(--dark-blue-color);
+}
+
+.resume-wrapper {
+    display: flex;
+    width: 100%;
+    margin: var(--spacing-xl) 0 0 0;
+    gap: var(--spacing-lg);
+}
+
+.resume-wrapper div {
+    width: 25%;
+}
+
+.resume-title {
+    display: flex;
+    align-items: center;
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.resume-title img {
+    width: 28px;
+}
+
+.resume-title h3 {
+    margin: 0 0 0 var(--spacing-md);
+}
+
+/* Resume Template */
+
+.resume-template {
+    display: flex;
+    padding: var(--spacing-xl) 0;
+    height: 700px;
+}
+
+.template-info {
+    width: 40%;
+    background-color: var(--dark-blue-color);
+    padding: var(--spacing-xl);
+    border-radius: 20px;
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.template-info::after {
+    content: '';
+    width: 50px;
+    height: 100%;
+    background-color: var(--white-color);
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    z-index: -2;
+}
+
+.template-info h2 {
+    font-size: 2.5rem;
+}
+
+.template-info p {
+    font-size: 1.3rem;
+    margin: var(--spacing-lg) 0;
+}
+
+.template-images {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.template-images img {
+    object-fit: cover;
+    height: 100%;
+    transform: rotate(-8deg);
+    box-shadow: var(--shadow-2);
+    border-radius: 10px;
+}
+
+.template-images img:nth-child(odd) {
+    position: relative;
+    top: 50px;
+}
+
+.template-images img:nth-child(even) {
+    position: relative;
+    top: -50px;
+}
+
+/* Join Us */
+
+.join-us {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue-color);
+    color: var(--white-color);
+    padding: calc((var(--spacing-xl) * 2)) var(--spacing-lg);
+}
+
+.join-us h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.join-us p {
+    margin: var(--spacing-md) 0 var(--spacing-xl) 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.join-us span {
+    text-decoration: underline rgb(255, 224, 26);
+}
+
+/* Footer */
+
+.main-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xl) var(--spacing-xl) 0 var(--spacing-xl);
+    background-color: var(--white-color);
+}
+
+.footer-wrapper {
+    display: flex;
+}
+
+.logo-footer {
+    width: 60%;
+}
+
+.logo-footer img {
+    width: 90px;
+}
+
+.logo-footer p {
+    width: 50%;
+    margin: var(--spacing-md) 0;
+}
+
+.company-footer,
+.help-footer {
+    width: 20%;
+    line-height: 28px;
+}
+
+.company-footer a:hover,
+.help-footer a:hover {
+    color: var(--dark-blue-color);
+}
+
+.copyright-footer {
+    width: 100%;
+    height: calc(var(--spacing-xl)*2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #e8e8e8;
+    margin: var(--spacing-lg) 0 0 0;
+}
+
+.copyright-footer .social-media img {
+    width: 25px;
+    margin: 0 var(--spacing-sm) var(--spacing-md) 0;
+}
+
+/* TABLET - RESPONSIVE */
+
+@media only screen and (max-width:820px) {
+
+    /* NavBar */
+
+    .main-header {
+        padding: 0 50px;
+    }
+
+    .main-nav {
+        max-width: 100%;
+        height: 0;
+        background-color: var(--white-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        margin: 0;
+        z-index: 1000;
+        transition: 0.4s ease-in-out;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    .main-nav.active {
+        height: calc(100vh - 100px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .main-nav.active::-webkit-scrollbar {
+        display: none;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .main-nav ul li a {
+        font-size: 1.6rem;
+    }
+
+    .hamburger-btn {
+        display: flex;
+        position: relative;
+    }
+
+    .hamburger-btn.active .bar:nth-child(1) {
+        display: none;
+    }
+
+    .hamburger-btn.active .bar:nth-child(2) {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 7px;
+        transition: 0.4s ease-in-out;
+    }
+
+    .hamburger-btn.active .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 7px;
+        transition: 0.4s ease-in-out;
+    }
+
+    /* Hero */
+
+    .main-wrapper {
+        padding: 50px 50px 50px 50px;
+    }
+
+    .hero-section {
+        position: relative;
+    }
+
+    .col-one {
+        width: 90%;
+        z-index: 1;
+    }
+
+    .col-one h2 {
+        width: 100%;
+    }
+
+    .col-one p {
+        width: 100%;
+        color: var(--dark-color);
+    }
+
+    .col-two {
+        width: 10%;
+    }
+
+    .col-two img {
+        width: 150%;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        opacity: 20%;
+    }
+
+    /* How Resume Builder Works */
+
+    .resume-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-lg);
+    }
+
+    .resume-wrapper div {
+        width: 46%;
+    }
+
+    /* Resume Template */
+
+    .resume-template {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .template-info {
+        width: 100%;
+    }
+
+    .template-info::after {
+        width: 100%;
+        height: 50px;
+        left: 0;
+        top: calc(100% - 15px);
+    }
+
+    .template-images {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .template-images img {
+        object-fit: cover;
+        transform: rotate(-8deg);
+        box-shadow: var(--shadow-2);
+        border-radius: 10px;
+    }
+
+    /* Footer */
+
+    .logo-footer p {
+        width: 90%;
+    }
+}
+
+/* MOBILE - RESPONSIVE */
+
+@media only screen and (max-width:640px) {
+
+    /* Hero */
+
+    .col-one {
+        width: 100%;
+    }
+
+    .col-two {
+        width: 0%;
+    }
+
+    .col-two img {
+        width: 250%;
+        left: 40%;
+    }
+
+    /* How Resume Builder Works */
+
+    .resume-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-lg);
+        justify-content: center;
+    }
+
+    .resume-wrapper div {
+        width: 100%;
+    }
+
+    .resume-wrapper p {
+        margin: 0 0 var(--spacing-md) 0;
+
+    }
+
+    .resume-builder h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Resume Template */
+
+    .template-info::after {
+        display: none;
+    }
+
+    .template-images {
+        display: none;
+    }
+
+    /* Footer */
+
+    .footer-wrapper {
+        flex-direction: column;
+    }
+
+    .logo-footer,
+    .company-footer,
+    .help-footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .company-footer,
+    .help-footer {
+        margin: var(--spacing-lg) 0 0 0;
+    }
+}
